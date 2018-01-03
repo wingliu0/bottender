@@ -28,6 +28,7 @@
     "check": "flow check",
     "clean": "rimraf lib",
     "precommit": "lint-staged",
+    "postinstall": "npm run build",
     "lint": "eslint bin src scripts examples",
     "lint:fix": "npm run lint -- --fix",
     "lint:staged": "lint-staged",
