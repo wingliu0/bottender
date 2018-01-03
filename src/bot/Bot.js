@@ -87,7 +87,7 @@ export default class Bot {
       );
     }
 
-    return async body => {
+    return async ({ req, body }) => {
       if (!body) {
         throw new Error('Bot.createRequestHandler: Missing argument.');
       }
@@ -140,6 +140,7 @@ export default class Bot {
             event,
             session: ((session: any): Session),
             initialState: this._initialState,
+            req,
           }),
         {
           concurrency: 5,
